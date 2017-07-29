@@ -2,6 +2,8 @@ window.onload = function(){
 	console.log ("loaded?");
 }
 
+var currentPrompt = 0;
+
 var prompts = [
 	'type your name',
 	'type an adjective',
@@ -13,7 +15,23 @@ var prompts = [
 
 $(document).ready(function(){
 
-	$('.prompt').html(prompts[0]);
-	
+	var nextPrompt = function() {	
+		$('.prompt').html(prompts[currentPrompt]);
+		currentPrompt ++;
+	}
+
+	$('button').click(function(){
+		nextPrompt();
+	});
+
+
+
+
 });
 
+
+
+	// function nextPrompt(){
+	// 	prompts[] = (prompts[currentPrompt]);
+	// 	$('.prompt').html(prompts[]);
+	// }
