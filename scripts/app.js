@@ -1,7 +1,7 @@
 window.onload = function(){
 	console.log ("loaded?");
 }
-
+var answers = [];
 var currentPrompt = 0;
 
 var prompts = [
@@ -15,20 +15,32 @@ var prompts = [
 
 $(document).ready(function(){
 
-	var nextPrompt = function() {	
-		if (currentPrompt < prompts.length) {	
+	var nextPrompt = function() {
 
-			$('.prompt').html(prompts[currentPrompt]);
+		if (currentPrompt != 0) {
+			answers.push($('input').val());
+		}
+
+		if (currentPrompt < prompts.length) {	
+			//alert($('input').val());
+			$('.prompt').html(prompts[currentPrompt] + '<br><input type="text">');
 			currentPrompt ++;
 		} else {
-			$('.prompt').html("that's all for now");
+			//$('.prompt').html("that's all for now");
+			showFinal();
 		}
 	} 
+
+	var showFinal = function() {
+		$('.prompt').html(answers[0] + ' ' + answers[1] + ' ' +answers[2]);
+		$('button').hide();
+	}
+
+
 
 	$('button').click(function(){
 		nextPrompt();
 	});
-
 
 	nextPrompt();
 
