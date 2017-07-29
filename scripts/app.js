@@ -25,14 +25,16 @@ $(document).ready(function(){
 			//alert($('input').val());
 			$('.prompt').html(prompts[currentPrompt] + '<br><input type="text">');
 			currentPrompt ++;
-		} else {
+		} 
+
+		else {
 			//$('.prompt').html("that's all for now");
 			showFinal();
 		}
 	} 
 
 	var showFinal = function() {
-		$('.prompt').html(answers[0] + ' ' + answers[1] + ' ' +answers[2]);
+		$('.prompt').html('This is the story  <span class="fill">' +answers[0]+ ' </span> and the <span class="fill">' + answers[1] + '</span> <span class="fill"> ' +answers[2]+'</span>.');
 		$('button').hide();
 	}
 
