@@ -16,16 +16,21 @@ var prompts = [
 $(document).ready(function(){
 
 	var nextPrompt = function() {	
-		$('.prompt').html(prompts[currentPrompt]);
-		currentPrompt ++;
-	}
+		if (currentPrompt < prompts.length) {	
+
+			$('.prompt').html(prompts[currentPrompt]);
+			currentPrompt ++;
+		} else {
+			$('.prompt').html("that's all for now");
+		}
+	} 
 
 	$('button').click(function(){
 		nextPrompt();
 	});
 
 
-
+	nextPrompt();
 
 });
 
