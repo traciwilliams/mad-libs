@@ -13,5 +13,15 @@ input {
 	font-size: 24px;
 }
 
-// font-family: 'Fjalla One', sans-serif;
-// font-family: 'Shadows Into Light', cursive;
+.fill {
+	font-family: 'Shadows Into Light', cursive;
+	background: white;
+	color: red;
+	border-bottom: 2px black solid;
+	padding: 0 6px;
+	margin: 4px;
+}
+
+footer {
+	color: lightgrey;
+}
